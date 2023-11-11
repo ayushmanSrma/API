@@ -36,8 +36,9 @@ model update {
   productId String?
   updates   updatePoint[]
 }
-//Enums can store additional information affiliated with each value in fields
-enum UPDATE_STATUS{
+
+//
+enum UPDATE_STATUS {
   IN_PROGRESS
   LIVE
   DEPRECATED

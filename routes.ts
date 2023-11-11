@@ -14,5 +14,16 @@ router.post("/product", async (req, res) => {
     await prisma.product.create({
         data: req.body
     })
+    res.json({ "message": "Create Successfully" })
+})
+
+// delete a product with id 
+router.delete("/product/:id", async (req, res) => {
+    const deleteProd = await prisma.product.delete({
+        where: {
+            id: req.params["id"]
+        }
+    })
+    res.json({ "DeletedProd": deleteProd })
 })
 export default router //exporting the router 
