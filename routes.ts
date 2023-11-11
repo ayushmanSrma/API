@@ -24,6 +24,19 @@ router.delete("/product/:id", async (req, res) => {
             id: req.params["id"]
         }
     })
-    res.json({ "DeletedProd": deleteProd })
+    res.json({ "DeletedProduct": deleteProd })
+})
+//update operation
+router.put("/product/:id", async (req, res) => {
+    const updated = await prisma.product.update({
+        where: {
+            id: req.params["id"]
+        },
+        data: {
+            name: req.body.name
+        }
+    })
+
+    res.json({ "updatedProd": updated })
 })
 export default router //exporting the router 
