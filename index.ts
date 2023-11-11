@@ -2,7 +2,7 @@
 const express = require('express') // to import the express module
 import router from "./routes"
 const app = express()//initialising express in app i.e api
-
+app.use(express.json())
 //to send some object(text etc to the server and fetching that information)
 app.get("/", (req, res) => { //using get method to the root directory("/") using req(request) to get the data/object and res(response) to send the data/object to res
     res.json({ name: "Ayushman" })
